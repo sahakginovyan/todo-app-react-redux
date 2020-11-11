@@ -1,0 +1,109 @@
+// --------------------------------------------------------
+// Button styles
+// --------------------------------------------------------
+.button {
+
+	// Variables
+	$button-sizes: (
+		'reg': 12,
+		'lg': 20,
+	);
+
+	// Base style
+	text-transform: none;
+	text-align: center;
+	padding: rem-calc(8.5) rem-calc(12);
+	cursor: pointer;
+	border-radius: rem-calc($global-radius);
+	font-weight: bold;
+	font-size: rem-calc(map-get($button-sizes, 'reg'));
+	display: inline-block;
+	line-height: normal;
+	color: map-get($theme-colors, 'white');
+	background-color: map-get($theme-colors, 'primary');
+	transition: background-color 0.2s ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			color: map-get($theme-colors, 'white');
+			background-color:  shade(map-get($theme-colors, 'primary'), 10%);
+		}
+	}
+
+	&.inverted {
+		background-color: map-get($theme-colors, 'white');
+		color: map-get($theme-colors, 'primary');
+
+		@media (hover: hover) {
+			&:hover,
+			&:focus {
+				background-color:  shade(map-get($theme-colors, 'white'), 5%);
+			}
+		}
+
+	}
+
+	// Color modifiers
+	@each $label, $color in $theme-colors {
+	
+		&.color-#{$label} {
+			background-color: $color;
+			color: set-color-invert($color);
+
+			@media (hover: hover) {
+				&:hover,
+				&:focus {
+					background-color:  shade($color, 10%);
+				}
+			}
+
+		}
+
+	}
+
+	// Size modifiers
+	@each $label, $size in $button-sizes {
+		
+		&.size-#{$label} {
+			font-size: rem-calc($size);
+
+			svg {
+				width: 1em;
+			}
+
+		}
+		
+	}
+
+	// Inverted modifier
+	@each $label, $color in $theme-colors {
+
+		// Inverted
+		&.color-#{$label}.inverted {
+			color: $color;
+			background-color: map-get($theme-colors, 'white');
+
+			@media (hover: hover) {
+				&:hover,
+				&:focus {
+					background-color:  shade(map-get($theme-colors, 'white'), 5%);
+				}
+			}
+
+		}
+
+	}
+
+	// Width modifier
+	&.full-width {
+		width: 100%;
+	}
+
+	// State modifiers
+	&:disabled,
+	&.disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+}

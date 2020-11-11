@@ -1,0 +1,32 @@
+// --------------------------------------------------------
+// Preview
+// --------------------------------------------------------
+.preview {
+
+	background-color: #fff;
+	padding: rem-calc($gap * 2);
+	border-radius: rem-calc($global-radius);
+	border-top-left-radius: 0;
+	border: rem-calc(1) solid #b1b1b1;
+	margin-bottom: rem-calc(map-get($margin-sizes, 'reg'));
+	position: relative;
+
+	// Tag
+	&:before {
+		content: attr(data-preview-label);
+		color: map-get($theme-colors, 'white');
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: rem-calc(-1);
+		transform: translateY(-100%);
+		background-color: map-get($theme-colors, 'primary');
+		padding: rem-calc(4) rem-calc(10);
+		border-top-left-radius: rem-calc($global-radius);
+		border-top-right-radius: rem-calc($global-radius);
+		border-bottom: 0;
+		font-size: rem-calc(10);
+		font-weight: bold;
+	}
+
+}

@@ -1,0 +1,64 @@
+// --------------------------------------------------------
+// Global variables
+// --------------------------------------------------------
+
+// --------------------------------------------------------
+// Breakpoints
+// --------------------------------------------------------
+$breakpoints: (
+	'sm': 0,
+	'md': 640,
+	'lg': 1024,
+	'xl': 1200
+);
+
+// --------------------------------------------------------
+// Theme colors
+// --------------------------------------------------------
+$theme-colors: (
+  'primary': #3959da,
+  'alert': #b62929,
+  'warning': #cf921f,
+	'success': #7ebd37,
+	'light-grey': #f1f1f1,
+	'medium-grey': #dadada,
+	'dark-grey': #b1b1b1,
+  'black': #303030,
+  'white': #fff
+);
+
+// --------------------------------------------------------
+// Body text
+// --------------------------------------------------------
+$body-text-color: map-get($theme-colors, 'black');
+$body-text-line-height: 1.5;
+$body-text-size: 16;
+$body-text-font-weight: normal;
+$body-text-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$code-font-family: Consolas,"Liberation Mono",Courier,monospace;
+
+$title-sizes: (
+	'sm': 20,
+	'reg': 26,
+	'lg': 32
+);
+
+// --------------------------------------------------------
+// Gap
+// --------------------------------------------------------
+$gap: 16;
+
+// --------------------------------------------------------
+// Radius
+// --------------------------------------------------------
+$global-radius: 4;
+
+// --------------------------------------------------------
+// Margin sizes
+// --------------------------------------------------------
+$margin-sizes: (
+  'sm': $gap,
+  'reg': $gap * 2,
+  'lg': $gap * 4
+);

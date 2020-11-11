@@ -1,0 +1,16 @@
+// --------------------------------------------------------
+// List item description styles
+// --------------------------------------------------------
+.list-item-description {
+
+	font-size: rem-calc(14);
+
+	@include breakpoint('lg') {
+		font-size: rem-calc($body-text-size);
+	}
+
+	&.text-strikethrough {
+		color: map-get($theme-colors, 'dark-grey');
+	}
+
+}

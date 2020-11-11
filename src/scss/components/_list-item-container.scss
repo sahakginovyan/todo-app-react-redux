@@ -1,0 +1,32 @@
+// --------------------------------------------------------
+// List item container styles
+// --------------------------------------------------------
+.list-item-container {
+
+	// Base styles
+	border-bottom: rem-calc(1) solid map-get($theme-colors, 'dark-grey');
+	min-height: rem-calc(31);
+	display: flex;
+	align-items: center;
+	flex: 1 1 auto;
+	padding: rem-calc($gap);
+
+	@include breakpoint('lg') {
+		padding: rem-calc($gap * 1.25) 0;
+	}
+
+	// --------------------------------------------------------
+	// Layout slots
+	// --------------------------------------------------------
+	.left-slot,
+	.right-slot {
+		display: flex;
+		flex: 1 1 auto;
+		align-items: center;
+	}
+
+	.right-slot {
+		justify-content: flex-end;
+	}
+
+}

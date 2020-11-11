@@ -1,0 +1,45 @@
+// --------------------------------------------------------
+// Title bar styles
+// --------------------------------------------------------
+.title-bar {
+
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+	box-shadow: 0 0 rem-calc(10) rgba(map-get($theme-colors, 'black'), 0.4);
+	background-color: map-get($theme-colors, 'primary');
+	
+	// Base styles
+	.inner {
+		min-height: rem-calc($gap * 2);
+		padding: rem-calc($gap);
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+		
+	}
+
+	// --------------------------------------------------------
+	// Fixed position
+	// --------------------------------------------------------
+	&.is-fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+	}
+
+	// --------------------------------------------------------
+	// Layout containers
+	// --------------------------------------------------------
+	.inner .left-slot,
+	.inner .right-slot {
+		display: flex;
+		flex: 1 1 auto;
+		align-items: center;
+	}
+
+	.inner .right-slot {
+		justify-content: flex-end;
+	}
+
+}

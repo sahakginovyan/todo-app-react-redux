@@ -1,0 +1,42 @@
+// --------------------------------------------------------
+// Check styles
+// --------------------------------------------------------
+.check {
+
+	// Base styles
+	display: block;
+	line-height: 0;
+
+	// Hide checkbox
+	input[type=checkbox] {
+		display: none;
+	}
+
+	// Style faux check
+	.check-mark {
+		display: inline-block;
+		width: rem-calc(22);
+		height: rem-calc(22);
+		border-radius: 50%;
+		border: rem-calc(1) solid #b1b1b1;
+		background-color: map-get($theme-colors, 'white');
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+	}
+
+	// Checked styles
+	input[type=checkbox ]:checked + .check-mark {
+		
+		background-color: map-get($theme-colors, 'primary');
+		box-shadow: inset 0 0 0 rem-calc(3) map-get($theme-colors, 'white');
+		border-color: map-get($theme-colors, 'primary');
+
+	}
+
+	// State modifier
+	input[type=checkbox ]:disabled + .check-mark {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+}

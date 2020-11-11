@@ -1,0 +1,63 @@
+// --------------------------------------------------------
+// Switch styles
+// --------------------------------------------------------
+.switch {
+
+	// Base styles
+	display: inline-block;
+
+	// Hide input
+	input[type=checkbox] {
+		display: none;
+	}
+
+	// Paddle
+	.paddle {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: rem-calc(48);
+		height: rem-calc(24);
+		padding: rem-calc(4);
+		border-radius: rem-calc(64);
+		background-color: #c7c7c7;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+	}
+
+	// Toggle
+	.paddle:before {
+		content: '';
+		background-color: #fff;
+		display: block;
+		width: 50%;
+		height: 100%;
+		border-radius: 50%;
+		transition: all 0.2s ease-in-out;
+	}
+
+	// Checked / selected
+	input[type=checkbox]:checked + .paddle {
+		background-color: map-get($theme-colors, 'primary');
+
+		// Color variants
+		@each $label, $color in $theme-colors {
+
+			@at-root  .#{$label}#{&} {
+				background-color: $color;
+			}
+
+		}
+
+		&:before {
+			transform: translateX(100%);
+		}
+	}
+
+	// State
+	input[type=checkbox]:disabled + .paddle {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+}

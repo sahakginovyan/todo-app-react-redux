@@ -1,0 +1,73 @@
+// --------------------------------------------------------
+// Add task item styles
+// --------------------------------------------------------
+.add-task-item {
+
+  // --------------------------------------------------------
+  // Container
+  // --------------------------------------------------------
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: rem-calc($gap);
+  background-color: map-get($theme-colors, 'light-grey');
+	overflow: hidden;
+  
+  @include breakpoint('lg') {
+    border-radius: rem-calc($global-radius);
+  }
+
+  // --------------------------------------------------------
+  // Text input
+  // --------------------------------------------------------
+  .task-input {
+    // Reset
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+
+    // Base styles
+    color: $body-text-color;
+    font-size: rem-calc(14);
+    flex: 1 1 auto;
+		padding-right: rem-calc($gap);
+    line-height: normal;
+    
+    @include breakpoint('lg') {
+      font-size: rem-calc(16);
+    }
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #888;
+      opacity: 1; /* Firefox */
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #888;
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #888;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // --------------------------------------------------------
+  // Icon button
+  // --------------------------------------------------------
+  .icon-button {
+
+    @include breakpoint('lg') {
+      width: rem-calc(40);
+      height: rem-calc(40);
+    }
+
+  }
+}

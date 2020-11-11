@@ -1,0 +1,19 @@
+// --------------------------------------------------------
+// Text link styles
+// --------------------------------------------------------
+.text-link {
+
+	font-size: rem-calc($body-text-size);
+	display: inline-block;
+	color: map-get($theme-colors, 'primary');
+
+	// Color modifiers
+	@each $label, $color in $theme-colors {
+	
+		&.color-#{$label} {
+			color: $color;
+		}
+
+	}
+
+}

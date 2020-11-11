@@ -1,0 +1,30 @@
+// --------------------------------------------------------
+// Settings view styles
+// --------------------------------------------------------
+#app .settings-view {
+
+	// --------------------------------------------------------
+	// Container
+	// --------------------------------------------------------
+	padding-top: rem-calc($gap * 6);
+
+	@include breakpoint('md') {
+		padding-top: rem-calc($gap * 8);
+	}
+
+	// --------------------------------------------------------
+	// View header
+	// --------------------------------------------------------
+	.view-header {
+		//margin-left: rem-calc(-$gap);
+		//margin-right: rem-calc(-$gap);
+		padding: 0 rem-calc($gap) rem-calc($gap * 2.5) rem-calc($gap);
+
+		@include breakpoint('lg') {
+			//margin-left: auto;
+			//margin-right: auto;
+			padding: 0 0 rem-calc($gap * 2.5) 0;
+		}
+	}
+
+}

@@ -1,0 +1,85 @@
+// --------------------------------------------------------
+// Helpers
+// --------------------------------------------------------
+
+// --------------------------------------------------------
+// Margins
+// --------------------------------------------------------
+#app .margin {
+
+	$margin-axis: (
+		'top': 'margin-top',
+		'right': 'margin-right',
+		'bottom': 'margin-bottom',
+		'left': 'margin-left',
+		'all': 'margin'
+	);
+
+	@each $axis-label, $axis in $margin-axis {
+
+		@each $label, $size in $margin-sizes {
+			&-#{$axis-label}-#{$label} {
+				#{$axis}: rem-calc($size);
+			}
+		}
+	
+	}
+	
+}
+
+// --------------------------------------------------------
+// Background color
+// --------------------------------------------------------
+#app .bg-color {
+  @each $label, $color in $theme-colors {
+    &-#{$label} {
+      background-color: $color;
+    }
+  }
+}
+
+// --------------------------------------------------------
+// Text color
+// --------------------------------------------------------
+#app .text-color {
+  @each $label, $color in $theme-colors {
+    &-#{$label} {
+      color: $color;
+    }
+  }
+}
+
+// --------------------------------------------------------
+// Text styles
+// --------------------------------------------------------
+#app .text-strikethrough {
+	text-decoration: line-through;
+}
+
+#app .text-italic {
+	font-style: italic;
+}
+
+#app .text-bold {
+	font-weight: bold;
+}
+
+// --------------------------------------------------------
+// Text alignment
+// --------------------------------------------------------
+#app .text-align {
+
+	$alignments: (
+		'left', 
+		'center', 
+		'right',
+		'justify'
+	);
+
+	@each $alignment in $alignments {
+		&-#{$alignment} {
+			text-align: #{$alignment};
+		}
+	}
+
+}

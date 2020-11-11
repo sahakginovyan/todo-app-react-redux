@@ -1,0 +1,46 @@
+// --------------------------------------------------------
+// App footer styles
+// --------------------------------------------------------
+.app-footer {
+	
+	padding: rem-calc($gap * 1.25) rem-calc($gap);
+
+	@include breakpoint('lg') {
+		padding: rem-calc($gap * 1.25) 0;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			text-align: center;
+			display: inline-flex;
+			flex: 1 1 auto;
+			width: 100%;
+
+			@include breakpoint('lg') {
+				padding-right: rem-calc(8);
+				flex: 0 1 auto;
+				width: auto;
+
+				&:not(:last-of-type):after {
+					content: '|';
+					display: inline-block;
+					margin-left: rem-calc(8);
+					color: map-get($theme-colors, 'black' );
+				}
+			}
+
+			
+		}
+
+		li a {
+			font-size: rem-calc(14);
+		}
+	}
+
+}

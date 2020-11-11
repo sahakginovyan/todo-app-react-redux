@@ -1,0 +1,59 @@
+// --------------------------------------------------------
+// Base styles
+// --------------------------------------------------------
+body {
+	box-sizing: border-box;
+  font-family: $body-text-font-family;
+	font-size: #{$body-text-size}px;
+	font-weight: $body-text-font-weight;
+  line-height: $body-text-line-height;
+  color: $body-text-color;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  color: $body-text-color;
+}
+
+a,
+a:focus,
+a:hover {
+  color: $body-text-color;
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+	border: 0;
+	outline: 0;
+	background: none;
+	text-decoration: none;
+	padding: 0;
+
+	&:focus,
+	&:hover {
+		outline: none;
+	}
+}
+
+hr {
+	width: 100%;
+	height: 0;
+	border: 0;
+	border-bottom: rem-calc(1) solid map-get($theme-colors, 'dark-grey');
+	margin: rem-calc(map-get($margin-sizes, 'lg')) 0;
+}
+
+#app {
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
